@@ -16,7 +16,7 @@
 /* Begin PBXFileReference section */
 		9CA107262C2B8FD300F52517 /* AnonymousChat.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AnonymousChat.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9CA107292C2B8FD300F52517 /* AnonymousChatApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnonymousChatApp.swift; sourceTree = "<group>"; };
-		9CA1072B2C2B8FD300F52517 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		9CA1072B2C2B8FD300F52517 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ContentView.swift; path = ../ContentView.swift; sourceTree = "<group>"; };
 		9CA1072D2C2B8FD900F52517 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		9CA107302C2B8FD900F52517 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -32,6 +32,42 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		9C039F8B2C2BAEFF00E1567F /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				9CA1072B2C2B8FD300F52517 /* ContentView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		9C039F8C2C2BAF2500E1567F /* VIewModels */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = VIewModels;
+			sourceTree = "<group>";
+		};
+		9C039F8D2C2BAF9100E1567F /* Models */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		9C039F8E2C2BAFB900E1567F /* Managers */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Managers;
+			sourceTree = "<group>";
+		};
+		9C039F8F2C2BAFC000E1567F /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
 		9CA1071D2C2B8FD200F52517 = {
 			isa = PBXGroup;
 			children = (
@@ -52,7 +88,11 @@
 			isa = PBXGroup;
 			children = (
 				9CA107292C2B8FD300F52517 /* AnonymousChatApp.swift */,
-				9CA1072B2C2B8FD300F52517 /* ContentView.swift */,
+				9C039F8B2C2BAEFF00E1567F /* Views */,
+				9C039F8C2C2BAF2500E1567F /* VIewModels */,
+				9C039F8D2C2BAF9100E1567F /* Models */,
+				9C039F8E2C2BAFB900E1567F /* Managers */,
+				9C039F8F2C2BAFC000E1567F /* Extensions */,
 				9CA1072D2C2B8FD900F52517 /* Assets.xcassets */,
 				9CA1072F2C2B8FD900F52517 /* Preview Content */,
 			);
