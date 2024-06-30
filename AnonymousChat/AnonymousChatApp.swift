@@ -11,7 +11,8 @@ import SwiftUI
 struct AnonymousChatApp: App {
     var body: some Scene {
         WindowGroup {
-            ContentView()
+//            ContentView()
+            IntroPageView()
         }
     }
 }
