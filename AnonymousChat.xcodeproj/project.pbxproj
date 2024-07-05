@@ -53,6 +53,7 @@
 			isa = PBXGroup;
 			children = (
 				9CA1072B2C2B8FD300F52517 /* ContentView.swift */,
+				9CEEBC4E2C377CC100BF51A2 /* Chat */,
 				9C9F03442C30AF0A007B38E0 /* Onboarding */,
 			);
 			path = Views;
@@ -139,6 +140,13 @@
 				9CA107302C2B8FD900F52517 /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		9CEEBC4E2C377CC100BF51A2 /* Chat */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Chat;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -358,6 +366,7 @@
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = AnonymousChat/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = Sideye;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -388,6 +397,7 @@
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = AnonymousChat/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = Sideye;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
