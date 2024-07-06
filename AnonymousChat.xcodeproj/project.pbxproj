@@ -19,6 +19,8 @@
 		9CA1072E2C2B8FD900F52517 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9CA1072D2C2B8FD900F52517 /* Assets.xcassets */; };
 		9CA107312C2B8FD900F52517 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9CA107302C2B8FD900F52517 /* Preview Assets.xcassets */; };
 		9CC3CF402C30FA42008697C3 /* NumberView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CC3CF3F2C30FA42008697C3 /* NumberView.swift */; };
+		9CEEBC502C3788B600BF51A2 /* ChatRoomView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CEEBC4F2C3788B600BF51A2 /* ChatRoomView.swift */; };
+		9CFD26EF2C37906500C35B58 /* TextInputArea.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CFD26EE2C37906500C35B58 /* TextInputArea.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -36,6 +38,8 @@
 		9CA1072D2C2B8FD900F52517 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		9CA107302C2B8FD900F52517 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		9CC3CF3F2C30FA42008697C3 /* NumberView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NumberView.swift; sourceTree = "<group>"; };
+		9CEEBC4F2C3788B600BF51A2 /* ChatRoomView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatRoomView.swift; sourceTree = "<group>"; };
+		9CFD26EE2C37906500C35B58 /* TextInputArea.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextInputArea.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -145,8 +149,18 @@
 		9CEEBC4E2C377CC100BF51A2 /* Chat */ = {
 			isa = PBXGroup;
 			children = (
+				9CFD26ED2C37905100C35B58 /* Components */,
+				9CEEBC4F2C3788B600BF51A2 /* ChatRoomView.swift */,
 			);
 			path = Chat;
+			sourceTree = "<group>";
+		};
+		9CFD26ED2C37905100C35B58 /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				9CFD26EE2C37906500C35B58 /* TextInputArea.swift */,
+			);
+			path = Components;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -226,6 +240,8 @@
 				9C52DD342C31073F00A7FE15 /* VerifyPhoneView.swift in Sources */,
 				9CA1072A2C2B8FD300F52517 /* AnonymousChatApp.swift in Sources */,
 				9C9F034F2C30D795007B38E0 /* ContactsView.swift in Sources */,
+				9CEEBC502C3788B600BF51A2 /* ChatRoomView.swift in Sources */,
+				9CFD26EF2C37906500C35B58 /* TextInputArea.swift in Sources */,
 				9C9F03462C30AF2D007B38E0 /* IntroPageView.swift in Sources */,
 				9C9F034B2C30C990007B38E0 /* FindSchoolView.swift in Sources */,
 				9CC3CF402C30FA42008697C3 /* NumberView.swift in Sources */,
@@ -366,7 +382,7 @@
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = AnonymousChat/Info.plist;
-				INFOPLIST_KEY_CFBundleDisplayName = Sideye;
+				INFOPLIST_KEY_CFBundleDisplayName = sideye;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -397,7 +413,7 @@
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = AnonymousChat/Info.plist;
-				INFOPLIST_KEY_CFBundleDisplayName = Sideye;
+				INFOPLIST_KEY_CFBundleDisplayName = sideye;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
