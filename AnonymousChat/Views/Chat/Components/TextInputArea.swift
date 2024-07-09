@@ -9,82 +9,76 @@ import SwiftUI
 
 struct TextInputArea: View {
     @State private var text = ""
-    
+
     var body: some View {
         
         ZStack {
-//            Color.black
-//                .edgesIgnoringSafeArea(.all)
             
-            HStack(alignment: .bottom, spacing: 5) {
+            HStack(alignment: .bottom, spacing: 10) {
+                moreOptionsButton()
                 imagePickerButton()
-                    .padding(3)
-                audioRecorderButton()
                 messageTextField()
                 sendMessageButton()
             }
-            .padding(.bottom)
-            .padding(.horizontal, 8)
+            .padding(.leading, 8)
             .padding(.top, 10)
-            .background(Color(.clear))
         }
-        
+        .frame(maxWidth: .infinity)
         
     }
+    
     
     private func imagePickerButton() -> some View {
         Button {
         } label: {
             Image(systemName: "photo.on.rectangle")
-                .font(.system(size: 22))  // Updated with font size
+                .font(.system(size: 27))
+                .padding(.bottom, 4)
         }
     }
     
-    private func audioRecorderButton() -> some View {
+    private func moreOptionsButton() -> some View {
         Button {
         } label: {
-            Image(systemName: "mic.fill")
-                .fontWeight(.heavy)
-                .imageScale(.small)
+            Image(systemName: "plus")
+                .fontWeight(.black)
+                .imageScale(.medium)
                 .foregroundStyle(.white)
-                .padding(6)
+                .padding(8)
                 .background(.blue)
                 .clipShape(Circle())
-                .padding(.horizontal, 3)
+                .padding(.leading, 3)
+                .padding(.bottom, 3)
         }
     }
     
     private func messageTextField() -> some View {
         TextField("", text: $text, axis: .vertical)
-            .padding(5)
+            .padding(10)
+            .foregroundColor(.black)
             .background(
                 ZStack {
                     RoundedRectangle(cornerRadius: 20, style: .continuous)
-                        .fill(Color.white.opacity(0.4))
-                        .blur(radius: 0.5)
-                    RoundedRectangle(cornerRadius: 20, style: .continuous)
-                        .stroke(Color.gray.opacity(0.5), lineWidth: 0) // Optional: to add a border
+                        .fill(Color.white.opacity(0.7))
+                    //                        .blur(radius: 10)
                 }
             )
             .clipShape(RoundedRectangle(cornerRadius: 20, style: .continuous))
         
-        //        TextField("", text: $text, axis: .vertical)
-//            .padding(5)
-//            .background(
-//                RoundedRectangle(cornerRadius: 20, style: .continuous)
-//                    .fill(.ultraThinMaterial)
-//            )
-    }
-    
-    private func textViewBorder() -> some View {
-        RoundedRectangle(cornerRadius: 20, style: .continuous)
-            .stroke(Color(.systemGray5), lineWidth: 1)
     }
     
     private func sendMessageButton() -> some View {
         Button {
         } label: {
-            Image(systemName: "paperplane.fill")
+            Image(systemName: "arrow.up")
+                .fontWeight(.black)
+                .imageScale(.medium)
+                .foregroundStyle(.white)
+                .padding(8)
+                .background(.blue)
+                .clipShape(Circle())
+                .padding(.trailing, 10)
+                .padding(.bottom, 2)
         }
     }
 }
@@ -93,3 +87,10 @@ struct TextInputArea: View {
 #Preview {
     TextInputArea()
 }
+
+
+
+
+
+
+

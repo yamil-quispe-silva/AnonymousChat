@@ -2,7 +2,7 @@
 //  ChatRoomView.swift
 //  AnonymousChat
 //
-//  Created by Yamil on 7/4/24.
+//  Created by Yamil on 7/6/24.
 //
 
 import SwiftUI
@@ -11,30 +11,34 @@ struct ChatRoomView: View {
     var body: some View {
         
         ZStack {
-            Color.black
+            Color.clear
                 .edgesIgnoringSafeArea(.all)
             
-            ScrollView {
-                LazyVStack {
-                    ForEach(0..<12) { _ in
-                        Text("PLACEHOLDER")
-                            .font(.largeTitle)
-                            .bold()
-                            .frame(maxWidth: .infinity)
-                            .frame(height: 200)
-                            .background(Color.gray.opacity(0.1))
-                    }
-                }
+            MessageListView()
+                .ignoresSafeArea(.all)
+                
+            
+            
+            BlurView()
+            
+            VStack {
+                Spacer()
+                
+                TextInputArea()
+
+                
             }
+            
+
+            .toolbar(.hidden, for: .tabBar)
             .toolbar {
                 leadingNavItems()
                 trailingNavItems()
             }
-            .safeAreaInset(edge: .bottom) {
-                TextInputArea()
-            }
         }
-        
+        .onTapGesture {
+            self.dismissKeyboard()
+        }
         
     }
 }
@@ -57,20 +61,32 @@ extension ChatRoomView {
         ToolbarItemGroup(placement: .topBarTrailing) {
             Button {
             } label: {
-                Image(systemName: "video")
-            }
-            Button {
-            } label: {
-                Image(systemName: "phone")
+                Image(systemName: "app.dashed")
+                    .fontWeight(.bold)
+//                    .imageScale(.small)
             }
         }
     }
 }
 
 
+extension View {
+    func dismissKeyboard() {
+        UIApplication.shared.sendAction(#selector(UIResponder.resignFirstResponder), to: nil, from: nil, for: nil)
+    }
+}
+
+
+
+//extension UIApplication {
+//    func endEditing() {
+//        sendAction(#selector(UIResponder.resignFirstResponder), to: nil, from: nil, for: nil)
+//    }
+//}
+
+
 #Preview {
     NavigationStack {
         ChatRoomView()
     }
-    
 }
