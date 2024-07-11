@@ -45,14 +45,17 @@ struct IntroPageView: View {
                     }
                     .buttonStyle(PlainButtonStyle()) // Optional: to remove any default button styling
                     
-                    Text("Sign in")
-                        .font(
-                            Font.custom("Swis721 BlkRnd BT", size: 17)
-                                .weight(.black)
-                        )
-                        .multilineTextAlignment(.center)
-                        .foregroundColor(Color(red: 0.72, green: 0.71, blue: 0.69))
-                        .frame(width: 209, height: 49, alignment: .center)
+                    NavigationLink(destination: SignInView()) {
+                        Text("Sign in")
+                            .font(
+                                Font.custom("Swis721 BlkRnd BT", size: 17)
+                                    .weight(.black)
+                            )
+                            .multilineTextAlignment(.center)
+                            .foregroundColor(Color(red: 0.72, green: 0.71, blue: 0.69))
+                            .frame(width: 209, height: 49, alignment: .center)
+                    }
+
                 }
             }
             .navigationTitle("")
