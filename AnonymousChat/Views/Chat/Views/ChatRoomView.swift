@@ -14,23 +14,24 @@ struct ChatRoomView: View {
             Color.clear
                 .edgesIgnoringSafeArea(.all)
             
-            MessageListView()
-                .ignoresSafeArea(.all)
+            
                 
             
             
-            BlurView()
+//            BlurView()
             
             VStack {
-                Spacer()
+//                Spacer()
+                MessageListView()
+                    .ignoresSafeArea(.all)
                 
                 TextInputArea()
 
-                
             }
-            
+            .edgesIgnoringSafeArea(.all)
+            .padding(.bottom, 0.5)
 
-            .toolbar(.hidden, for: .tabBar)
+            .toolbar(.visible, for: .tabBar)
             .toolbar {
                 leadingNavItems()
                 trailingNavItems()

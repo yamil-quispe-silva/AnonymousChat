@@ -9,6 +9,9 @@
 /* Begin PBXBuildFile section */
 		9C52DD342C31073F00A7FE15 /* VerifyPhoneView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C52DD332C31073E00A7FE15 /* VerifyPhoneView.swift */; };
 		9C52DD362C310DF200A7FE15 /* NameView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C52DD352C310DF200A7FE15 /* NameView.swift */; };
+		9C8010622C3DF5000035D23F /* MessageItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C8010612C3DF5000035D23F /* MessageItem.swift */; };
+		9C8010652C3DF5C20035D23F /* BubbleTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C8010642C3DF5C20035D23F /* BubbleTextView.swift */; };
+		9C8010672C3F28F60035D23F /* Swiss 721 Rounded Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 9C8010662C3F28F60035D23F /* Swiss 721 Rounded Bold.otf */; };
 		9C9F03462C30AF2D007B38E0 /* IntroPageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C9F03452C30AF2D007B38E0 /* IntroPageView.swift */; };
 		9C9F03482C30C1C4007B38E0 /* swiss_721_black_rounded_bt.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 9C9F03472C30C1C4007B38E0 /* swiss_721_black_rounded_bt.ttf */; };
 		9C9F034B2C30C990007B38E0 /* FindSchoolView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C9F034A2C30C990007B38E0 /* FindSchoolView.swift */; };
@@ -30,6 +33,9 @@
 /* Begin PBXFileReference section */
 		9C52DD332C31073E00A7FE15 /* VerifyPhoneView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VerifyPhoneView.swift; sourceTree = "<group>"; };
 		9C52DD352C310DF200A7FE15 /* NameView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NameView.swift; sourceTree = "<group>"; };
+		9C8010612C3DF5000035D23F /* MessageItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageItem.swift; sourceTree = "<group>"; };
+		9C8010642C3DF5C20035D23F /* BubbleTextView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BubbleTextView.swift; sourceTree = "<group>"; };
+		9C8010662C3F28F60035D23F /* Swiss 721 Rounded Bold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Swiss 721 Rounded Bold.otf"; sourceTree = "<group>"; };
 		9C9F03452C30AF2D007B38E0 /* IntroPageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntroPageView.swift; sourceTree = "<group>"; };
 		9C9F03472C30C1C4007B38E0 /* swiss_721_black_rounded_bt.ttf */ = {isa = PBXFileReference; lastKnownFileType = text; name = swiss_721_black_rounded_bt.ttf; path = "Preview Content/swiss_721_black_rounded_bt.ttf"; sourceTree = "<group>"; };
 		9C9F03492C30C26F007B38E0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
@@ -99,6 +105,15 @@
 			path = Extensions;
 			sourceTree = "<group>";
 		};
+		9C8010632C3DF5230035D23F /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				9CF6EA212C3A42CC0043B916 /* ChatRoomView.swift */,
+				9C8010642C3DF5C20035D23F /* BubbleTextView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
 		9C9F03442C30AF0A007B38E0 /* Onboarding */ = {
 			isa = PBXGroup;
 			children = (
@@ -141,6 +156,7 @@
 				9C039F8F2C2BAFC000E1567F /* Extensions */,
 				9CA1072D2C2B8FD900F52517 /* Assets.xcassets */,
 				9C9F03472C30C1C4007B38E0 /* swiss_721_black_rounded_bt.ttf */,
+				9C8010662C3F28F60035D23F /* Swiss 721 Rounded Bold.otf */,
 				9CA1072F2C2B8FD900F52517 /* Preview Content */,
 			);
 			path = AnonymousChat;
@@ -157,18 +173,19 @@
 		9CEEBC4E2C377CC100BF51A2 /* Chat */ = {
 			isa = PBXGroup;
 			children = (
-				9CF089862C3DF1CB00D90849 /* New Group */,
-				9CF6EA212C3A42CC0043B916 /* ChatRoomView.swift */,
+				9C8010632C3DF5230035D23F /* Views */,
+				9CF089862C3DF1CB00D90849 /* Models */,
 				9CFD26ED2C37905100C35B58 /* Components */,
 			);
 			path = Chat;
 			sourceTree = "<group>";
 		};
-		9CF089862C3DF1CB00D90849 /* New Group */ = {
+		9CF089862C3DF1CB00D90849 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				9C8010612C3DF5000035D23F /* MessageItem.swift */,
 			);
-			path = "New Group";
+			path = Models;
 			sourceTree = "<group>";
 		};
 		9CFD26ED2C37905100C35B58 /* Components */ = {
@@ -243,6 +260,7 @@
 			files = (
 				9C9F03482C30C1C4007B38E0 /* swiss_721_black_rounded_bt.ttf in Resources */,
 				9CA107312C2B8FD900F52517 /* Preview Assets.xcassets in Resources */,
+				9C8010672C3F28F60035D23F /* Swiss 721 Rounded Bold.otf in Resources */,
 				9CA1072E2C2B8FD900F52517 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -254,11 +272,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9C8010622C3DF5000035D23F /* MessageItem.swift in Sources */,
 				9C9F034D2C30D092007B38E0 /* PickSchoolView.swift in Sources */,
 				9CA1072C2C2B8FD300F52517 /* ContentView.swift in Sources */,
 				9CF089832C3DCD1700D90849 /* BlurView.swift in Sources */,
 				9C52DD362C310DF200A7FE15 /* NameView.swift in Sources */,
 				9C52DD342C31073F00A7FE15 /* VerifyPhoneView.swift in Sources */,
+				9C8010652C3DF5C20035D23F /* BubbleTextView.swift in Sources */,
 				9CA1072A2C2B8FD300F52517 /* AnonymousChatApp.swift in Sources */,
 				9C9F034F2C30D795007B38E0 /* ContactsView.swift in Sources */,
 				9CECF4922C3B0C9600FCBCD1 /* TransparentBlurView.swift in Sources */,
