@@ -13,21 +13,24 @@ struct TextInputArea: View {
     var body: some View {
         
         ZStack {
-            
             HStack(alignment: .bottom, spacing: 4) {
                 moreOptionsButton()
                 imagePickerButton()
                 messageTextField()
-//                sendMessageButton()
             }
             .padding(.leading, 5)
             .padding(.trailing, 5)
-            .padding(.top, 0)
+            .padding(.top, 6)
             .padding(.bottom, 10)
         }
         .frame(maxWidth: .infinity)
+        .background(Color.clear)
+        
         
     }
+    
+    
+    
     
     private func moreOptionsButton() -> some View {
         Button {
@@ -36,10 +39,9 @@ struct TextInputArea: View {
                 .fontWeight(.bold)
                 .imageScale(.medium)
                 .foregroundStyle(.white)
-                .padding(7)
+                .padding(8)
                 .background(.blue)
                 .clipShape(Circle())
-//                .padding(.leading, 3)
                 .padding(.bottom, 10)
         }
     }
@@ -64,70 +66,29 @@ struct TextInputArea: View {
                         .fill(Color.clear)
                 )
                 .font(.custom("Swiss 721 Bold Rounded", size: 17)) // Adjust font and size
-                .foregroundColor(.white )
-                .lineLimit(nil) // Allow for multiple lines
-//                .padding(.trailing, 1) // Add padding to ensure text does not overlap button
+                .foregroundColor(.black )
+                .lineLimit(nil)
 
-            // Send Button
+
+            
             Button(action: {
                 // Send button action
             }) {
-                Image(systemName: "arrow.up.circle.fill")
-                    .resizable()
-                    .frame(width: 35, height: 35)
-                    .foregroundColor(.blue)
-                    .background(
-                        Circle()
-                            .fill(Color(.white))
-                    )
+                Image(systemName: "arrow.up")
+                    .fontWeight(.bold)
+                    .imageScale(.medium)
+                    .foregroundStyle(.white)
+                    .padding(8)
+                    .background(.blue)
+                    .clipShape(Circle())
             }
-//            .padding(.bottom, 2) // Align the button at the bottom
-//            .padding(.trailing, 3)
         }
         .padding(.horizontal, 7)
         .padding(.vertical, 7)
-        .background(Color(.systemGray4).opacity(0.9)) // Background color of the TextField view
+        .background(Color(.systemGray2))
         .cornerRadius(30)
         
         
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-//        TextField("", text: $text, axis: .vertical)
-//            .padding(10)
-//            .foregroundColor(.black)
-//            .font(.custom("Swiss 721 Bold Rounded", size: 16))
-//            .background(
-//                ZStack {
-//                    RoundedRectangle(cornerRadius: 20, style: .continuous)
-//                        .fill(Color.white.opacity(0.7))
-//                    //                        .blur(radius: 10)
-//                }
-//            )
-//            .clipShape(RoundedRectangle(cornerRadius: 20, style: .continuous))
-        
-    }
-    
-    private func sendMessageButton() -> some View {
-        Button {
-        } label: {
-            Image(systemName: "arrow.up")
-                .fontWeight(.black)
-                .imageScale(.medium)
-                .foregroundStyle(.white)
-                .padding(8)
-                .background(.blue)
-                .clipShape(Circle())
-                .padding(.trailing, 10)
-                .padding(.bottom, 2)
-        }
     }
 }
 

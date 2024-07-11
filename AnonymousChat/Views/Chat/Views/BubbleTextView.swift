@@ -43,9 +43,6 @@ struct BubbleTextView: View {
 
 
 
-
-
-
 #Preview {
     ScrollView {
         BubbleTextView(item: .sentPlaceholder)

@@ -11,35 +11,29 @@ struct ChatRoomView: View {
     var body: some View {
         
         ZStack {
-            Color.clear
-                .edgesIgnoringSafeArea(.all)
             
             
-                
-            
-            
-//            BlurView()
             
             VStack {
-//                Spacer()
                 MessageListView()
                     .ignoresSafeArea(.all)
-                
                 TextInputArea()
-
+//                    .padding(.bottom, 15)
+                
             }
-            .edgesIgnoringSafeArea(.all)
-            .padding(.bottom, 0.5)
+            .background(Color.gray) //changes the entire chatRoom background!!!!!!!!!!!!!!!!!!
+            .onTapGesture {
+                self.dismissKeyboard()
+            }
 
-            .toolbar(.visible, for: .tabBar)
+            .navigationBarTitleDisplayMode(.inline)
+            .toolbar(.hidden, for: .tabBar)
             .toolbar {
                 leadingNavItems()
                 trailingNavItems()
             }
         }
-        .onTapGesture {
-            self.dismissKeyboard()
-        }
+        
         
     }
 }
