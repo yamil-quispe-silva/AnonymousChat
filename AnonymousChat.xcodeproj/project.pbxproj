@@ -7,6 +7,13 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		9489FB552C4044A8002BDAF5 /* FirebaseAnalytics in Frameworks */ = {isa = PBXBuildFile; productRef = 9489FB542C4044A8002BDAF5 /* FirebaseAnalytics */; };
+		9489FB572C4044A8002BDAF5 /* FirebaseMessaging in Frameworks */ = {isa = PBXBuildFile; productRef = 9489FB562C4044A8002BDAF5 /* FirebaseMessaging */; };
+		9489FB592C4044B4002BDAF5 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 9489FB582C4044B4002BDAF5 /* GoogleService-Info.plist */; };
+		9489FB5B2C4049DF002BDAF5 /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = 9489FB5A2C4049DF002BDAF5 /* FirebaseAuth */; };
+		9489FB5D2C4049DF002BDAF5 /* FirebaseStorage in Frameworks */ = {isa = PBXBuildFile; productRef = 9489FB5C2C4049DF002BDAF5 /* FirebaseStorage */; };
+		9489FB5F2C404C0D002BDAF5 /* SignInView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9489FB5E2C404C0D002BDAF5 /* SignInView.swift */; };
+		9489FB612C404FE9002BDAF5 /* CreateLogin.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9489FB602C404FE9002BDAF5 /* CreateLogin.swift */; };
 		9C52DD342C31073F00A7FE15 /* VerifyPhoneView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C52DD332C31073E00A7FE15 /* VerifyPhoneView.swift */; };
 		9C52DD362C310DF200A7FE15 /* NameView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C52DD352C310DF200A7FE15 /* NameView.swift */; };
 		9C9F03462C30AF2D007B38E0 /* IntroPageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C9F03452C30AF2D007B38E0 /* IntroPageView.swift */; };
@@ -22,6 +29,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		9489FB582C4044B4002BDAF5 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../../../../Downloads/GoogleService-Info.plist"; sourceTree = "<group>"; };
+		9489FB5E2C404C0D002BDAF5 /* SignInView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInView.swift; sourceTree = "<group>"; };
+		9489FB602C404FE9002BDAF5 /* CreateLogin.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateLogin.swift; sourceTree = "<group>"; };
 		9C52DD332C31073E00A7FE15 /* VerifyPhoneView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VerifyPhoneView.swift; sourceTree = "<group>"; };
 		9C52DD352C310DF200A7FE15 /* NameView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NameView.swift; sourceTree = "<group>"; };
 		9C9F03452C30AF2D007B38E0 /* IntroPageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntroPageView.swift; sourceTree = "<group>"; };
@@ -43,6 +53,10 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9489FB572C4044A8002BDAF5 /* FirebaseMessaging in Frameworks */,
+				9489FB5D2C4049DF002BDAF5 /* FirebaseStorage in Frameworks */,
+				9489FB5B2C4049DF002BDAF5 /* FirebaseAuth in Frameworks */,
+				9489FB552C4044A8002BDAF5 /* FirebaseAnalytics in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -94,8 +108,10 @@
 				9C9F034C2C30D092007B38E0 /* PickSchoolView.swift */,
 				9CC3CF3F2C30FA42008697C3 /* NumberView.swift */,
 				9C52DD332C31073E00A7FE15 /* VerifyPhoneView.swift */,
+				9489FB5E2C404C0D002BDAF5 /* SignInView.swift */,
 				9C52DD352C310DF200A7FE15 /* NameView.swift */,
 				9C9F034E2C30D795007B38E0 /* ContactsView.swift */,
+				9489FB602C404FE9002BDAF5 /* CreateLogin.swift */,
 			);
 			path = Onboarding;
 			sourceTree = "<group>";
@@ -120,6 +136,7 @@
 			isa = PBXGroup;
 			children = (
 				9C9F03492C30C26F007B38E0 /* Info.plist */,
+				9489FB582C4044B4002BDAF5 /* GoogleService-Info.plist */,
 				9CA107292C2B8FD300F52517 /* AnonymousChatApp.swift */,
 				9C039F8B2C2BAEFF00E1567F /* Views */,
 				9C039F8C2C2BAF2500E1567F /* VIewModels */,
@@ -157,6 +174,12 @@
 			dependencies = (
 			);
 			name = AnonymousChat;
+			packageProductDependencies = (
+				9489FB542C4044A8002BDAF5 /* FirebaseAnalytics */,
+				9489FB562C4044A8002BDAF5 /* FirebaseMessaging */,
+				9489FB5A2C4049DF002BDAF5 /* FirebaseAuth */,
+				9489FB5C2C4049DF002BDAF5 /* FirebaseStorage */,
+			);
 			productName = AnonymousChat;
 			productReference = 9CA107262C2B8FD300F52517 /* AnonymousChat.app */;
 			productType = "com.apple.product-type.application";
@@ -185,6 +208,9 @@
 				Base,
 			);
 			mainGroup = 9CA1071D2C2B8FD200F52517;
+			packageReferences = (
+				9489FB532C4044A8002BDAF5 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
+			);
 			productRefGroup = 9CA107272C2B8FD300F52517 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -200,6 +226,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				9C9F03482C30C1C4007B38E0 /* swiss_721_black_rounded_bt.ttf in Resources */,
+				9489FB592C4044B4002BDAF5 /* GoogleService-Info.plist in Resources */,
 				9CA107312C2B8FD900F52517 /* Preview Assets.xcassets in Resources */,
 				9CA1072E2C2B8FD900F52517 /* Assets.xcassets in Resources */,
 			);
@@ -216,8 +243,10 @@
 				9CA1072C2C2B8FD300F52517 /* ContentView.swift in Sources */,
 				9C52DD362C310DF200A7FE15 /* NameView.swift in Sources */,
 				9C52DD342C31073F00A7FE15 /* VerifyPhoneView.swift in Sources */,
+				9489FB5F2C404C0D002BDAF5 /* SignInView.swift in Sources */,
 				9CA1072A2C2B8FD300F52517 /* AnonymousChatApp.swift in Sources */,
 				9C9F034F2C30D795007B38E0 /* ContactsView.swift in Sources */,
+				9489FB612C404FE9002BDAF5 /* CreateLogin.swift in Sources */,
 				9C9F03462C30AF2D007B38E0 /* IntroPageView.swift in Sources */,
 				9C9F034B2C30C990007B38E0 /* FindSchoolView.swift in Sources */,
 				9CC3CF402C30FA42008697C3 /* NumberView.swift in Sources */,
@@ -354,7 +383,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"AnonymousChat/Preview Content\"";
-				DEVELOPMENT_TEAM = 89B9H2GF72;
+				DEVELOPMENT_TEAM = 6JXR4QA97N;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = AnonymousChat/Info.plist;
@@ -384,7 +413,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"AnonymousChat/Preview Content\"";
-				DEVELOPMENT_TEAM = 89B9H2GF72;
+				DEVELOPMENT_TEAM = 6JXR4QA97N;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = AnonymousChat/Info.plist;
@@ -428,6 +457,40 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		9489FB532C4044A8002BDAF5 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/firebase/firebase-ios-sdk";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 10.29.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		9489FB542C4044A8002BDAF5 /* FirebaseAnalytics */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 9489FB532C4044A8002BDAF5 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseAnalytics;
+		};
+		9489FB562C4044A8002BDAF5 /* FirebaseMessaging */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 9489FB532C4044A8002BDAF5 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseMessaging;
+		};
+		9489FB5A2C4049DF002BDAF5 /* FirebaseAuth */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 9489FB532C4044A8002BDAF5 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseAuth;
+		};
+		9489FB5C2C4049DF002BDAF5 /* FirebaseStorage */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 9489FB532C4044A8002BDAF5 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseStorage;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 9CA1071E2C2B8FD200F52517 /* Project object */;
 }

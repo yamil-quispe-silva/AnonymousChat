@@ -6,9 +6,22 @@
 //
 
 import SwiftUI
+import FirebaseCore
+
+extension AnonymousChatApp {
+  private func initFirebase() {
+    FirebaseApp.configure()
+  }
+}
+
 
 @main
 struct AnonymousChatApp: App {
+    
+    init() {
+        initFirebase()
+    }
+    
     var body: some Scene {
         WindowGroup {
 //            ContentView()
