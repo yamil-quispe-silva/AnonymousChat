@@ -69,7 +69,7 @@ struct NameView: View {@State private var firstName: String = ""
                 Spacer()
                 
                 // Continue button
-                NavigationLink(destination: ContactsView(), isActive: $shouldNavigate) {
+                NavigationLink(destination: CreateLogin(), isActive: $shouldNavigate) {
                     ZStack {
                         Rectangle()
                             .foregroundColor(firstName.isEmpty || lastName.isEmpty ? Color(red: 0.14, green: 0.14, blue: 0.15) : Color(red: 0.96, green: 0.43, blue: 0.01))
