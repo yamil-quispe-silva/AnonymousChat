@@ -24,7 +24,25 @@ struct TextInputArea: View {
             .padding(.bottom, 10)
         }
         .frame(maxWidth: .infinity)
-        .background(Color.clear)
+        .background(
+            ZStack {
+                TransparentBlurView(removeAllFilters: true)
+                    .blur(radius: 30)
+                    .edgesIgnoringSafeArea(.all)
+                    .padding(.horizontal, -20)
+                    .visualEffect { view, proxy in
+                        view
+                            .offset(y:proxy.bounds(of: .scrollView)?.minY ?? 0)
+                        
+                    }
+                
+//                Rectangle()
+//                    .foregroundColor(Color.black.opacity(0.3))
+//                    .edgesIgnoringSafeArea(.all)
+            }
+            
+            
+        )
         
         
     }

@@ -21,7 +21,31 @@ struct ChatRoomView: View {
 //                    .padding(.bottom, 15)
                 
             }
-            .background(Color.gray) //changes the entire chatRoom background!!!!!!!!!!!!!!!!!!
+            .background(
+                ZStack {
+                    Image("messageImage2")
+                        .resizable()
+                        .scaledToFill()
+                        .edgesIgnoringSafeArea(.all)
+                    
+                    
+                    TransparentBlurView(removeAllFilters: true)
+                        .blur(radius: 30)
+                        .edgesIgnoringSafeArea(.all)
+                        .padding(.horizontal, -20)
+                        .visualEffect { view, proxy in
+                            view
+                                .offset(y:proxy.bounds(of: .scrollView)?.minY ?? 0)
+                            
+                        }
+                    
+                    Rectangle()
+                        .foregroundColor(Color.black.opacity(0.3))
+                        .edgesIgnoringSafeArea(.all)
+                }
+                
+                
+            )
             .onTapGesture {
                 self.dismissKeyboard()
             }
