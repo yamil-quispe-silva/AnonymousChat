@@ -9,6 +9,12 @@ import SwiftUI
 
 
 
+// two errors:
+// - navbar is white for a sec
+// - when you click on the texteditor the background moves
+
+
+
 struct NewChatView: View {
     
     @State private var groupName: String = ""
@@ -21,7 +27,7 @@ struct NewChatView: View {
                 ScrollView {
                     VStack(alignment: .leading, spacing: 30) {
                         GroupPhoto()
-                            .padding(.top, 15)
+                            .padding(.top, -25)
                         GroupNameAndDateAndPeople()
                         DescriptionField()
                         ParticipantsSection()
@@ -29,7 +35,6 @@ struct NewChatView: View {
                         CitySection()
                         ExitButton()
                     }
-                    .padding(.top, 10)
                     .padding(.horizontal)
                     .foregroundColor(.white)
                 }
@@ -37,12 +42,10 @@ struct NewChatView: View {
                     ToolbarItem(placement: .principal) {
                         Text("New Chat")
                             .fontWeight(.bold)
-                            .foregroundColor(.white.opacity(0.8))
+                            .foregroundColor(.white)
                             .font(.system(size: 17))
                     }
                 }
-                .navigationBarTitleDisplayMode(.inline)
-                .toolbarBackground(Color(UIColor.systemGray2).opacity(0.1))
                 .toolbarColorScheme(.dark)
             }
             .background(
@@ -56,30 +59,30 @@ struct NewChatView: View {
                     TransparentBlurView(removeAllFilters: true)
                         .blur(radius: 30)
                         .edgesIgnoringSafeArea(.all)
-                        .padding(.horizontal, -20)
-                        .visualEffect { view, proxy in
-                            view
-                                .offset(y:proxy.bounds(of: .scrollView)?.minY ?? 0)
-                            
-                        }
+                    //                        .padding(.horizontal, -20)
+                    //                        .visualEffect { view, proxy in
+                    //                            view
+                    //                                .offset(y:proxy.bounds(of: .scrollView)?.minY ?? 0)
+                    //
+                    //                        }
                     
                     Rectangle()
                         .foregroundColor(Color.black.opacity(0.3))
                         .edgesIgnoringSafeArea(.all)
                 }
-            
-            
+                
+                
             )
         }
     }
-
+    
     
     
     private func GroupPhoto() -> some View {
         Image("group_pic")
             .resizable()
             .aspectRatio(contentMode: .fill)
-            .frame( width: 335, height: 330)
+            .frame( width: 370, height: 350)
             .cornerRadius(25)
             .frame(maxWidth: .infinity)
             .overlay(alignment: .bottomTrailing) {
@@ -111,7 +114,7 @@ struct NewChatView: View {
         .padding(.horizontal, 15)
         .background(
             RoundedRectangle(cornerRadius: 20, style: .continuous)
-                .fill(Color.white.opacity(0.3))
+                .fill(Color.gray.opacity(0.3))
         )
     }
     
@@ -120,7 +123,7 @@ struct NewChatView: View {
             ZStack(alignment: .leading) {
                 if groupName.isEmpty {
                     Text("Group Name")
-                        .font(.custom("FONTSPRING DEMO - Roc Grotesk Wide", size: 24))
+                        .font(.custom("FONTSPRING DEMO - Roc Grotesk Wide", size: 27))
                         .foregroundColor(Color.white.opacity(0.3))
                         .padding(.horizontal)
                 }
@@ -141,7 +144,7 @@ struct NewChatView: View {
                         .datePickerStyle(CompactDatePickerStyle())
                         .labelsHidden()
                         .opacity(0) // Hide the original date text
-
+                    
                     Text("\(selectedDate, formatter: dateFormatter)")
                         .font(.subheadline)
                         .foregroundColor(Color.white) // Low opacity white text
@@ -150,7 +153,7 @@ struct NewChatView: View {
                 .padding(.horizontal, 6)
                 .background(Color.gray.opacity(0.3))
                 .cornerRadius(8)
-
+                
                 Text("4 people")
                     .font(.subheadline)
                     .padding(.vertical, 7)
@@ -170,7 +173,7 @@ struct NewChatView: View {
         formatter.dateStyle = .medium
         return formatter
     }
-
+    
     private func DescriptionField() -> some View {
         VStack(alignment: .leading) {
             HStack {
@@ -190,7 +193,7 @@ struct NewChatView: View {
             
             
             MultipleLineTextField(placeholder: "Add group description...", text: $descriptionText)
-                
+            
             
         }
         
@@ -285,14 +288,8 @@ struct NewChatView: View {
         }
         .padding()
     }
-    
-   
-    
-    
+
 }
-
-
-
 
 
 
