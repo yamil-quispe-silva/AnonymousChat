@@ -58,3 +58,16 @@ extension Chat {
         self.createdBy = dict["createdBy"] as? String ?? ""
     }
 }
+
+
+struct User: Identifiable {
+    let id: UUID
+    let name: String
+}
+
+struct Message: Identifiable {
+    let id: UUID
+    let sender: User
+    let content: String
+    let timestamp: Date
+}
