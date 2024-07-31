@@ -39,9 +39,9 @@ struct ChatRoomView: View {
                             
                         }
                     
-                    Rectangle()
-                        .foregroundColor(Color.black.opacity(0.3))
-                        .edgesIgnoringSafeArea(.all)
+//                    Rectangle()
+//                        .foregroundColor(Color.black.opacity(0.3))
+//                        .edgesIgnoringSafeArea(.all)
                 }
                 
                 
