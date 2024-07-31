@@ -13,6 +13,11 @@ import SwiftUI
 // - navbar is white for a sec
 // - when you click on the texteditor the background moves
 
+//struct CustomShapeStyle: ShapeStyle {
+//    func _apply(to shape: inout _ShapeStyle_Shape) {
+//        shape.fill(Color.black.opacity(0.4))
+//    }
+//}
 
 
 struct NewChatView: View {
@@ -20,6 +25,8 @@ struct NewChatView: View {
     @State private var groupName: String = ""
     @State private var selectedDate: Date = Date()
     @State private var descriptionText: String = ""
+    
+    
     
     var body: some View {
         NavigationStack {
@@ -46,7 +53,7 @@ struct NewChatView: View {
                             .font(.system(size: 17))
                     }
                 }
-                .toolbarColorScheme(.dark)
+                .toolbarBackground(Color.black.opacity(0.85), for: .navigationBar)
             }
             .background(
                 ZStack {
@@ -59,16 +66,12 @@ struct NewChatView: View {
                     TransparentBlurView(removeAllFilters: true)
                         .blur(radius: 30)
                         .edgesIgnoringSafeArea(.all)
-                    //                        .padding(.horizontal, -20)
-                    //                        .visualEffect { view, proxy in
-                    //                            view
-                    //                                .offset(y:proxy.bounds(of: .scrollView)?.minY ?? 0)
-                    //
-                    //                        }
                     
-                    Rectangle()
-                        .foregroundColor(Color.black.opacity(0.3))
-                        .edgesIgnoringSafeArea(.all)
+                    
+                    
+//                    Rectangle()
+//                        .foregroundColor(Color.black.opacity(0.3))
+//                        .edgesIgnoringSafeArea(.all)
                 }
                 
                 
@@ -309,3 +312,7 @@ let participants = [
 #Preview {
     NewChatView()
 }
+
+
+
+
