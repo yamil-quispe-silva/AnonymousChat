@@ -13,7 +13,7 @@ struct ChatView: View {
 
     var body: some View {
         VStack {
-            AsyncImage(url: chat.imageURL) { image in
+            AsyncImage(url: chat.groupChatImage) { image in
                 image.resizable()
             } placeholder: {
                 ProgressView()
