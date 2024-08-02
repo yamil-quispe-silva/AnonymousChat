@@ -25,6 +25,7 @@ struct Chat: Identifiable {
         return membersCount > 2
     }
 
+    
     static var placeholder = Chat(
         id: "1",
 //        lastMessage: "Hello world",

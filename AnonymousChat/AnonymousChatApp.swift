@@ -1,3 +1,4 @@
+
 //
 //  AnonymousChatApp.swift
 //  AnonymousChat
@@ -13,10 +14,12 @@ extension AnonymousChatApp {
     FirebaseApp.configure()
   }
 }
-
+ 
 
 @main
 struct AnonymousChatApp: App {
+    
+    @State private var isHomePageActive = false
     
     init() {
         initFirebase()
@@ -25,7 +28,10 @@ struct AnonymousChatApp: App {
     var body: some Scene {
         WindowGroup {
 //            ContentView()
-            NewChatView()
+//            NewChatView()
+            HomePageView(isHomePageActive: $isHomePageActive)
         }
     }
 }
+
+
