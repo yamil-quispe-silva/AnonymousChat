@@ -217,9 +217,9 @@
 		9CE83AF32C44F2A600B1CFCC /* CreateNewChat */ = {
 			isa = PBXGroup;
 			children = (
+				9C750E292C5D991400968B32 /* SelectMembersView.swift */,
 				9CE83AF42C44F2BF00B1CFCC /* NewChatView.swift */,
 				9CE83AF82C46430900B1CFCC /* Components */,
-				9C750E292C5D991400968B32 /* SelectMembersView.swift */,
 			);
 			path = CreateNewChat;
 			sourceTree = "<group>";
@@ -514,6 +514,7 @@
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = AnonymousChat/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = sideye;
+				INFOPLIST_KEY_NSContactsUsageDescription = "need to access contacts";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -545,6 +546,7 @@
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = AnonymousChat/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = sideye;
+				INFOPLIST_KEY_NSContactsUsageDescription = "need to access contacts";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
