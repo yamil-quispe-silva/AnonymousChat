@@ -109,6 +109,7 @@
 			isa = PBXGroup;
 			children = (
 				9CA1072B2C2B8FD300F52517 /* ContentView.swift */,
+				9C750E2F2C5D9A8E00968B32 /* Home */,
 				9CE83AF32C44F2A600B1CFCC /* CreateNewChat */,
 				9CEEBC4E2C377CC100BF51A2 /* Chat */,
 				9C9F03442C30AF0A007B38E0 /* Onboarding */,
@@ -116,43 +117,20 @@
 			path = Views;
 			sourceTree = "<group>";
 		};
-		9C039F8C2C2BAF2500E1567F /* VIewModels */ = {
+		9C750E2F2C5D9A8E00968B32 /* Home */ = {
 			isa = PBXGroup;
 			children = (
+				9CCFEA1A2C5AA444001F3B92 /* HomePageView.swift */,
+				9CCFEA192C5AA444001F3B92 /* FriendPageView.swift */,
 			);
-			path = VIewModels;
-			sourceTree = "<group>";
-		};
-		9C039F8D2C2BAF9100E1567F /* Models */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Models;
-			sourceTree = "<group>";
-		};
-		9C039F8E2C2BAFB900E1567F /* Managers */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Managers;
-			sourceTree = "<group>";
-		};
-		9C039F8F2C2BAFC000E1567F /* Extensions */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Extensions;
+			path = Home;
 			sourceTree = "<group>";
 		};
 		9C8010632C3DF5230035D23F /* Views */ = {
 			isa = PBXGroup;
 			children = (
 				9CF6EA212C3A42CC0043B916 /* ChatRoomView.swift */,
-				9C8010642C3DF5C20035D23F /* BubbleTextView.swift */,
-				9C80106A2C3F65900035D23F /* BubbleImageView.swift */,
 				9CCFEA1B2C5AA444001F3B92 /* ChatView.swift */,
-				9CCFEA192C5AA444001F3B92 /* FriendPageView.swift */,
-				9CCFEA1A2C5AA444001F3B92 /* HomePageView.swift */,
 				9CCFEA1C2C5AA444001F3B92 /* MessageView.swift */,
 			);
 			path = Views;
@@ -197,10 +175,6 @@
 				9C009FF22C4310600088832E /* GoogleService-Info.plist */,
 				9CA107292C2B8FD300F52517 /* AnonymousChatApp.swift */,
 				9C039F8B2C2BAEFF00E1567F /* Views */,
-				9C039F8C2C2BAF2500E1567F /* VIewModels */,
-				9C039F8D2C2BAF9100E1567F /* Models */,
-				9C039F8E2C2BAFB900E1567F /* Managers */,
-				9C039F8F2C2BAFC000E1567F /* Extensions */,
 				9CA1072D2C2B8FD900F52517 /* Assets.xcassets */,
 				9C9F03472C30C1C4007B38E0 /* swiss_721_black_rounded_bt.ttf */,
 				9C8010662C3F28F60035D23F /* Swiss 721 Rounded Bold.otf */,
@@ -260,6 +234,8 @@
 		9CFD26ED2C37905100C35B58 /* Components */ = {
 			isa = PBXGroup;
 			children = (
+				9C8010642C3DF5C20035D23F /* BubbleTextView.swift */,
+				9C80106A2C3F65900035D23F /* BubbleImageView.swift */,
 				9CFD26EE2C37906500C35B58 /* TextInputArea.swift */,
 				9CF089822C3DCD1700D90849 /* BlurView.swift */,
 				9CE53F0C2C39E7BE00DC20B9 /* MessageListView.swift */,
