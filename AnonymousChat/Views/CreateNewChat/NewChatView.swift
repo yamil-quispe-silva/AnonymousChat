@@ -1,3 +1,4 @@
+
 //
 //  NewChatView.swift
 //  AnonymousChat
@@ -18,6 +19,7 @@ import SwiftUI
 //        shape.fill(Color.black.opacity(0.4))
 //    }
 //}
+//
 
 
 struct NewChatView: View {
@@ -312,7 +314,3 @@ let participants = [
 #Preview {
     NewChatView()
 }
-
-
-
-
