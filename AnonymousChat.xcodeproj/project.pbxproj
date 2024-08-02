@@ -17,6 +17,7 @@
 		9C18474B2C596FD0009FE25A /* Chat.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C18474A2C596FD0009FE25A /* Chat.swift */; };
 		9C52DD342C31073F00A7FE15 /* VerifyPhoneView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C52DD332C31073E00A7FE15 /* VerifyPhoneView.swift */; };
 		9C52DD362C310DF200A7FE15 /* NameView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C52DD352C310DF200A7FE15 /* NameView.swift */; };
+		9C750E2A2C5D991400968B32 /* SelectMembersView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C750E292C5D991400968B32 /* SelectMembersView.swift */; };
 		9C8010622C3DF5000035D23F /* MessageItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C8010612C3DF5000035D23F /* MessageItem.swift */; };
 		9C8010652C3DF5C20035D23F /* BubbleTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C8010642C3DF5C20035D23F /* BubbleTextView.swift */; };
 		9C8010672C3F28F60035D23F /* Swiss 721 Rounded Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 9C8010662C3F28F60035D23F /* Swiss 721 Rounded Bold.otf */; };
@@ -53,6 +54,7 @@
 		9C18474A2C596FD0009FE25A /* Chat.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Chat.swift; sourceTree = "<group>"; };
 		9C52DD332C31073E00A7FE15 /* VerifyPhoneView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VerifyPhoneView.swift; sourceTree = "<group>"; };
 		9C52DD352C310DF200A7FE15 /* NameView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NameView.swift; sourceTree = "<group>"; };
+		9C750E292C5D991400968B32 /* SelectMembersView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectMembersView.swift; sourceTree = "<group>"; };
 		9C8010612C3DF5000035D23F /* MessageItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageItem.swift; sourceTree = "<group>"; };
 		9C8010642C3DF5C20035D23F /* BubbleTextView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BubbleTextView.swift; sourceTree = "<group>"; };
 		9C8010662C3F28F60035D23F /* Swiss 721 Rounded Bold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Swiss 721 Rounded Bold.otf"; sourceTree = "<group>"; };
@@ -217,6 +219,7 @@
 			children = (
 				9CE83AF42C44F2BF00B1CFCC /* NewChatView.swift */,
 				9CE83AF82C46430900B1CFCC /* Components */,
+				9C750E292C5D991400968B32 /* SelectMembersView.swift */,
 			);
 			path = CreateNewChat;
 			sourceTree = "<group>";
@@ -371,6 +374,7 @@
 				9CE53F0D2C39E7BE00DC20B9 /* MessageListView.swift in Sources */,
 				9CF6EA222C3A42CC0043B916 /* ChatRoomView.swift in Sources */,
 				9C9F034B2C30C990007B38E0 /* FindSchoolView.swift in Sources */,
+				9C750E2A2C5D991400968B32 /* SelectMembersView.swift in Sources */,
 				9CC3CF402C30FA42008697C3 /* NumberView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
