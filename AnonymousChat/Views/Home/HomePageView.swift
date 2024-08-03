@@ -12,6 +12,7 @@ struct HomePageView: View {
     @Binding var isHomePageActive: Bool
     @State private var selectedChatIndex = 0
     @State private var isHeartFilled = false
+    @State private var showSelectMembersView = false
 
     let yourChats: [Chat] = [
         // Example data. Replace with actual data.
@@ -144,7 +145,9 @@ struct HomePageView: View {
                             .fontWeight(.bold)
                     }
                     Spacer()
-                    NavigationLink(destination: SelectMembersView()) {
+                    Button(action: {
+                        showSelectMembersView.toggle()
+                    }) {
                         ZStack {
                             Circle()
                                 .fill(Color.gray)
@@ -153,6 +156,9 @@ struct HomePageView: View {
                                 .foregroundColor(.white)
                                 .font(.system(size: 24))
                         }
+                    }
+                    .fullScreenCover(isPresented: $showSelectMembersView) {
+                        SelectMembersView()
                     }
                 }
                 .padding()
