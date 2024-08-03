@@ -37,7 +37,8 @@ struct SelectMembersView: View {
                 
             }
             .frame(maxWidth: .infinity)
-            .searchable(text: $searchText, prompt: "Search name or number")
+            .searchable(text: $searchText,
+                        prompt: "Search name or number")
             .onAppear {
                 // Customize the appearance of the search bar
                 UISearchBar.appearance().barTintColor = UIColor.white

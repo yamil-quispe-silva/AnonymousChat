@@ -20,6 +20,7 @@
 		9C750E2A2C5D991400968B32 /* SelectMembersView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C750E292C5D991400968B32 /* SelectMembersView.swift */; };
 		9C750E2C2C5D99F600968B32 /* ContactRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C750E2B2C5D99F600968B32 /* ContactRow.swift */; };
 		9C750E2E2C5D9A2800968B32 /* ContactBubble.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C750E2D2C5D9A2800968B32 /* ContactBubble.swift */; };
+		9C750E332C5ED6C400968B32 /* NewGroupViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C750E322C5ED6C300968B32 /* NewGroupViewModel.swift */; };
 		9C8010622C3DF5000035D23F /* MessageItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C8010612C3DF5000035D23F /* MessageItem.swift */; };
 		9C8010652C3DF5C20035D23F /* BubbleTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C8010642C3DF5C20035D23F /* BubbleTextView.swift */; };
 		9C8010672C3F28F60035D23F /* Swiss 721 Rounded Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 9C8010662C3F28F60035D23F /* Swiss 721 Rounded Bold.otf */; };
@@ -59,6 +60,7 @@
 		9C750E292C5D991400968B32 /* SelectMembersView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectMembersView.swift; sourceTree = "<group>"; };
 		9C750E2B2C5D99F600968B32 /* ContactRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactRow.swift; sourceTree = "<group>"; };
 		9C750E2D2C5D9A2800968B32 /* ContactBubble.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactBubble.swift; sourceTree = "<group>"; };
+		9C750E322C5ED6C300968B32 /* NewGroupViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewGroupViewModel.swift; sourceTree = "<group>"; };
 		9C8010612C3DF5000035D23F /* MessageItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageItem.swift; sourceTree = "<group>"; };
 		9C8010642C3DF5C20035D23F /* BubbleTextView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BubbleTextView.swift; sourceTree = "<group>"; };
 		9C8010662C3F28F60035D23F /* Swiss 721 Rounded Bold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Swiss 721 Rounded Bold.otf"; sourceTree = "<group>"; };
@@ -124,6 +126,14 @@
 				9CCFEA192C5AA444001F3B92 /* FriendPageView.swift */,
 			);
 			path = Home;
+			sourceTree = "<group>";
+		};
+		9C750E312C5ED67D00968B32 /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				9C750E322C5ED6C300968B32 /* NewGroupViewModel.swift */,
+			);
+			path = ViewModels;
 			sourceTree = "<group>";
 		};
 		9C8010632C3DF5230035D23F /* Views */ = {
@@ -195,6 +205,7 @@
 		9CE83AF32C44F2A600B1CFCC /* CreateNewChat */ = {
 			isa = PBXGroup;
 			children = (
+				9C750E312C5ED67D00968B32 /* ViewModels */,
 				9C750E292C5D991400968B32 /* SelectMembersView.swift */,
 				9CE83AF42C44F2BF00B1CFCC /* NewChatView.swift */,
 				9CE83AF82C46430900B1CFCC /* Components */,
@@ -337,6 +348,7 @@
 				9C750E2E2C5D9A2800968B32 /* ContactBubble.swift in Sources */,
 				9CCFEA1F2C5AA444001F3B92 /* ChatView.swift in Sources */,
 				9CA1072C2C2B8FD300F52517 /* ContentView.swift in Sources */,
+				9C750E332C5ED6C400968B32 /* NewGroupViewModel.swift in Sources */,
 				9CF089832C3DCD1700D90849 /* BlurView.swift in Sources */,
 				9C52DD362C310DF200A7FE15 /* NameView.swift in Sources */,
 				9CCFEA1E2C5AA444001F3B92 /* HomePageView.swift in Sources */,
