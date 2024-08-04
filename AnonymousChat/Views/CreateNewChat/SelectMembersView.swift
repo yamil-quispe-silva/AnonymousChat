@@ -13,6 +13,7 @@ struct SelectMembersView: View {
     @State private var users: [User] = []
     @State private var searchText = ""
     @Environment(\.dismiss) private var dismiss
+    @StateObject private var viewModel = NewGroupViewModel()
     
     //          FOR PREVIEW:
     init(users: [User] = []) {
@@ -20,20 +21,60 @@ struct SelectMembersView: View {
     }
     
     var body: some View {
-        NavigationStack {
+        NavigationStack(path: $viewModel.navStack) {
             ZStack {
                 
                 Color.black.edgesIgnoringSafeArea(.all)
                 
-                ScrollView {
-                    VStack {
-                        ForEach(Array(stride(from: 0, to: users.count, by: 3)), id: \.self) { index in
-                            ContactRow(users: Array(users[index..<min(index + 3, users.count)]))
-                        }
-                    }
-                }
+//                ScrollView {
+//                    VStack {
+//                        ForEach(Array(stride(from: 0, to: users.count, by: 3)), id: \.self) { index in
+//                            ContactRow(users: Array(users[index..<min(index + 3, users.count)]))
+                            
+//                            HStack {
+//                                ForEach(users, id: \.id) { user in
+//                                    ContactBubble(
+//                                        name: user.name,
+//                                        image: user.image,
+//                                        social: user.social
+//                                    )
+//                                    .padding()
+//                                    .padding(.horizontal, 3)
+//                                }
+//                            }
+//                            .frame(maxWidth: .infinity)
+//                            
+//                            
+//                        }
+//                    }
+//                }
 //                .frame(maxWidth: .infinity)
 //                .scrollIndicators(.hidden)
+                
+                
+                
+                ScrollView {
+                    VStack(alignment: .leading) {
+                        ForEach(chunks(of: users, size: 3), id: \.self) { rowUsers in
+                            HStack {
+                                ForEach(rowUsers, id: \.id) { user in
+                                    Button {
+                                        
+                                    } label: {
+                                        contactBubbleView(.placeholder)
+                                    }
+                                }
+                            }
+                            .padding(.top, 15)
+                            .padding(.bottom, 15)
+                        }
+                    }
+                    .padding()
+                }
+                
+                
+                
+                
                 
             }
             .frame(maxWidth: .infinity)
@@ -54,13 +95,17 @@ struct SelectMembersView: View {
                 UINavigationBar.appearance().scrollEdgeAppearance = appearance
             }
             .navigationTitle("Select members")
+            .navigationDestination(for: ChatCreationRoute.self) { route in
+                
+                destinationView(for: route)
+                
+            }
             .navigationBarTitleDisplayMode(.inline)
             .toolbar {
                 trailingNavItem()
             }
             
-            
-            
+        
             //fetch contacts call
             .onAppear() {
                 
@@ -81,6 +126,49 @@ struct SelectMembersView: View {
                 
                 
         }
+            
+        }
+    }
+    
+    private func contactBubbleView(_ user: User) -> some View {
+        ContactBubble(name: user.name, image: user.image, social: user.social) {
+            
+            Image(systemName: "circle")
+                .font(.title)
+                .fontWeight(.black)
+                .imageScale(.large)
+                .frame(width: 38, height: 38)
+                .background(Circle().fill(Color.black))
+                .clipShape(Circle())
+                .foregroundStyle(.white)
+                .padding(.trailing, -13)
+                .padding(.bottom, -12)
+            
+            
+//            
+//            Image(systemName: "checkmark.circle.fill")
+//                .font(.title)
+//                .fontWeight(.black)
+//                .padding(2)
+//                .foregroundStyle(.white)
+//                .foregroundColor(.black)
+//                .background(.black)
+//                .background(.thinMaterial)
+//                .clipShape(Circle())
+//                .padding(.trailing, -14)
+//                .padding(.bottom, -14)
+//                .overlay {
+//                    Image(systemName: "circle")
+//                        .font(.title)
+//                        .fontWeight(.black)
+//                        .imageScale(.large)
+//                        .frame(width: 59, height: 59)
+//                        .background(Circle().fill(Color.clear))
+//                        .clipShape(Circle())
+//                        .foregroundStyle(.white)
+//                        .padding(.trailing, -13)
+//                        .padding(.bottom, -12)
+//                }
             
         }
     }
@@ -125,6 +213,21 @@ struct SelectMembersView: View {
 }
 
 extension SelectMembersView {
+    
+    @ViewBuilder
+    private func destinationView(for route: ChatCreationRoute) -> some View {
+        switch route {
+        case .addGroupChatMembers:
+            Text("ADD GROUP CHAT PARTNER")
+        case .setUpGroupChat:
+            Text("SETUP GROUP CHAT")
+        }
+    }
+}
+
+
+
+extension SelectMembersView {
     @ToolbarContentBuilder
     private func trailingNavItem() -> some ToolbarContent {
         ToolbarItem(placement: .topBarTrailing) {
@@ -144,6 +247,21 @@ extension SelectMembersView {
                 .background(Color(.white.opacity(0.15)))
                 .clipShape(Circle())
         }
+    }
+    
+    private func chunks<T>(of array: [T], size: Int) -> [[T]] {
+        var chunks: [[T]] = []
+        var currentChunk: [T] = []
+        
+        for (index, element) in array.enumerated() {
+            currentChunk.append(element)
+            if currentChunk.count == size || index == array.count - 1 {
+                chunks.append(currentChunk)
+                currentChunk = []
+            }
+        }
+        
+        return chunks
     }
     
     

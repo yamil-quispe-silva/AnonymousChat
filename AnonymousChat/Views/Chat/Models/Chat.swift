@@ -74,12 +74,18 @@ extension Chat {
                   
 
 
-struct User: Identifiable {
+struct User: Identifiable, Hashable {
     let id: UUID
     let name: String
     var image: UIImage?
     var social: String?
+    
+    static let placeholder = User(id: UUID(), name: "Osas", image: nil, social: nil)
+    
 }
+    
+    
+
       
 
 struct Message: Identifiable {

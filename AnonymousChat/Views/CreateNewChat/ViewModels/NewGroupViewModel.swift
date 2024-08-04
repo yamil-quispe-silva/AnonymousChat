@@ -6,3 +6,12 @@
 //
 
 import Foundation
+
+enum ChatCreationRoute {
+    case addGroupChatMembers
+    case setUpGroupChat
+}
+
+final class NewGroupViewModel: ObservableObject {
+    @Published var navStack = [ChatCreationRoute]()
+}
