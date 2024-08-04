@@ -50,31 +50,37 @@ struct SelectMembersView: View {
 //                }
 //                .frame(maxWidth: .infinity)
 //                .scrollIndicators(.hidden)
-                
-                
-                
-                ScrollView {
-                    VStack(alignment: .leading) {
-                        ForEach(chunks(of: users, size: 3), id: \.self) { rowUsers in
-                            HStack {
-                                ForEach(rowUsers, id: \.id) { user in
-                                    Button {
-                                        
-                                    } label: {
-                                        contactBubbleView(.placeholder)
-                                    }
-                                }
-                            }
-                            .padding(.top, 15)
-                            .padding(.bottom, 15)
+                VStack {
+                    Section {
+                        if viewModel.showSelectedUsers {
+                            Text("users selected")
+                                .foregroundColor(.white)
                         }
                     }
-                    .padding()
+                    
+                    
+                    ScrollView {
+                        VStack(alignment: .leading) {
+                            ForEach(chunks(of: users, size: 3), id: \.self) { rowUsers in
+                                HStack {
+                                    ForEach(rowUsers, id: \.id) { user in
+                                        Button {
+                                            viewModel.handleItemSelection(user)
+                                        } label: {
+                                            contactBubbleView(user)
+                                        }
+                                    }
+                                }
+                                .padding(.top, 15)
+                                .padding(.bottom, 15)
+                            }
+                        }
+                        .padding()
+                    }
+                    
+                    
+                    
                 }
-                
-                
-                
-                
                 
             }
             .frame(maxWidth: .infinity)
@@ -133,42 +139,44 @@ struct SelectMembersView: View {
     private func contactBubbleView(_ user: User) -> some View {
         ContactBubble(name: user.name, image: user.image, social: user.social) {
             
-            Image(systemName: "circle")
-                .font(.title)
-                .fontWeight(.black)
-                .imageScale(.large)
-                .frame(width: 38, height: 38)
-                .background(Circle().fill(Color.black))
-                .clipShape(Circle())
-                .foregroundStyle(.white)
-                .padding(.trailing, -13)
-                .padding(.bottom, -12)
-            
-            
-//            
-//            Image(systemName: "checkmark.circle.fill")
-//                .font(.title)
-//                .fontWeight(.black)
-//                .padding(2)
-//                .foregroundStyle(.white)
-//                .foregroundColor(.black)
-//                .background(.black)
-//                .background(.thinMaterial)
-//                .clipShape(Circle())
-//                .padding(.trailing, -14)
-//                .padding(.bottom, -14)
-//                .overlay {
-//                    Image(systemName: "circle")
-//                        .font(.title)
-//                        .fontWeight(.black)
-//                        .imageScale(.large)
-//                        .frame(width: 59, height: 59)
-//                        .background(Circle().fill(Color.clear))
-//                        .clipShape(Circle())
-//                        .foregroundStyle(.white)
-//                        .padding(.trailing, -13)
-//                        .padding(.bottom, -12)
-//                }
+            if viewModel.isUserSelected(user) {
+                Image(systemName: "checkmark.circle.fill")
+                    .font(.title)
+                    .fontWeight(.black)
+                    .padding(2)
+                    .foregroundStyle(.white)
+                    .foregroundColor(.black)
+                    .background(.black)
+                    .background(.thinMaterial)
+                    .clipShape(Circle())
+                    .padding(.trailing, -14)
+                    .padding(.bottom, -14)
+                    .overlay {
+                        Image(systemName: "circle")
+                            .font(.title)
+                            .fontWeight(.black)
+                            .imageScale(.large)
+                            .frame(width: 59, height: 59)
+                            .background(Circle().fill(Color.clear))
+                            .clipShape(Circle())
+                            .foregroundStyle(.white)
+                            .padding(.trailing, -13)
+                            .padding(.bottom, -12)
+                    }
+                
+                
+            } else {
+                Image(systemName: "circle")
+                    .font(.title)
+                    .fontWeight(.bold)
+                    .imageScale(.large)
+                    .frame(width: 38, height: 38)
+                    .background(Circle().fill(Color.black))
+                    .clipShape(Circle())
+                    .foregroundStyle(.white)
+                    .padding(.trailing, -13)
+                    .padding(.bottom, -12)
+            }
             
         }
     }
@@ -220,7 +228,7 @@ extension SelectMembersView {
         case .addGroupChatMembers:
             Text("ADD GROUP CHAT PARTNER")
         case .setUpGroupChat:
-            Text("SETUP GROUP CHAT")
+            NewChatView()
         }
     }
 }

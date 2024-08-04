@@ -71,48 +71,4 @@ extension Chat {
     }
                   
 }
-                  
-
-
-struct User: Identifiable, Hashable {
-    let id: UUID
-    let name: String
-    var image: UIImage?
-    var social: String?
-    
-    static let placeholder = User(id: UUID(), name: "Osas", image: nil, social: nil)
-    
-}
-    
-    
-
-      
-
-struct Message: Identifiable {
-    let id: UUID
-    let sender: User
-    let content: String
-    let timestamp: Date
-}
-
-
-extension User {
-    init(_ dict: [String: Any]) {
-        self.id = UUID(uuidString: dict["id"] as? String ?? "") ?? UUID()
-        self.name = dict["firstName"] as? String ?? ""
-        self.image = dict["image"] as? UIImage
-        self.social = dict["social"] as? String
-    }
-}
-
-
-extension Message {
-    init(_ dict: [String: Any]) {
-        self.id = UUID(uuidString: dict["id"] as? String ?? "") ?? UUID()
-        self.sender = User(dict["sender"] as? [String: Any] ?? [:])
-        self.content = dict["content"] as? String ?? ""
-        let timestampInterval = dict["timestamp"] as? Double ?? 0
-        self.timestamp = Date(timeIntervalSince1970: timestampInterval)
-    }
-}
-
+                      
