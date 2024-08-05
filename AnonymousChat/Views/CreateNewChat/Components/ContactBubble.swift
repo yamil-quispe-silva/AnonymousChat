@@ -75,7 +75,7 @@ struct ContactBubble<Content: View>: View {
             
         }
         .frame(width: 100, height: 100)
-        .padding(.horizontal, 10)
+        .padding(.horizontal, 20)
         
     }
     

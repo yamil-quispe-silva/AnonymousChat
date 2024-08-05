@@ -51,6 +51,8 @@ struct SelectMembersView: View {
 //                .frame(maxWidth: .infinity)
 //                .scrollIndicators(.hidden)
                 VStack {
+                    
+                    //selected users section
                     Section {
                         if viewModel.showSelectedUsers {
                             Text("users selected")
@@ -62,7 +64,7 @@ struct SelectMembersView: View {
                     ScrollView {
                         VStack(alignment: .leading) {
                             ForEach(chunks(of: users, size: 3), id: \.self) { rowUsers in
-                                HStack {
+                                HStack(spacing: 1) {
                                     ForEach(rowUsers, id: \.id) { user in
                                         Button {
                                             viewModel.handleItemSelection(user)
@@ -111,7 +113,6 @@ struct SelectMembersView: View {
                 trailingNavItem()
             }
             
-        
             //fetch contacts call
             .onAppear() {
                 
@@ -136,48 +137,36 @@ struct SelectMembersView: View {
         }
     }
     
+    
     private func contactBubbleView(_ user: User) -> some View {
         ContactBubble(name: user.name, image: user.image, social: user.social) {
-            
             if viewModel.isUserSelected(user) {
                 Image(systemName: "checkmark.circle.fill")
                     .font(.title)
-                    .fontWeight(.black)
+                    .foregroundColor(.white)
+                    .background(
+                        Circle()
+                            .fill(Color.black)
+                            .frame(width: 25, height: 25)
+                    )
                     .padding(2)
-                    .foregroundStyle(.white)
-                    .foregroundColor(.black)
-                    .background(.black)
-                    .background(.thinMaterial)
-                    .clipShape(Circle())
-                    .padding(.trailing, -14)
-                    .padding(.bottom, -14)
-                    .overlay {
-                        Image(systemName: "circle")
-                            .font(.title)
-                            .fontWeight(.black)
-                            .imageScale(.large)
-                            .frame(width: 59, height: 59)
-                            .background(Circle().fill(Color.clear))
-                            .clipShape(Circle())
-                            .foregroundStyle(.white)
-                            .padding(.trailing, -13)
-                            .padding(.bottom, -12)
-                    }
-                
+                    .padding(.trailing, -13)
+                    .padding(.bottom, -12)
                 
             } else {
                 Image(systemName: "circle")
                     .font(.title)
-                    .fontWeight(.bold)
-                    .imageScale(.large)
-                    .frame(width: 38, height: 38)
-                    .background(Circle().fill(Color.black))
-                    .clipShape(Circle())
-                    .foregroundStyle(.white)
+                    .foregroundColor(.white)
+                    .background(
+                        Circle()
+                            .fill(Color.black)
+                            .frame(width: 25, height: 25)
+                    )
+                    .padding(2)
                     .padding(.trailing, -13)
                     .padding(.bottom, -12)
             }
-            
+                    
         }
     }
     
@@ -216,7 +205,6 @@ struct SelectMembersView: View {
         }
         
     }
-    
     
 }
 
