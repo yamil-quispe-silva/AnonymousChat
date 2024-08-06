@@ -55,16 +55,21 @@ struct SelectMembersView: View {
                     //selected users section
                     Section {
                         if viewModel.showSelectedUsers {
-                            Text("users selected")
-                                .foregroundColor(.white)
+                            SectionSelectedContacts(users: viewModel.selectedChatMembers) { user in
+                                viewModel.handleItemSelection(user)
+                            }
                         }
                     }
+                    .background(.clear)
+                    
+                    .frame(height: 120)
+                    .padding(.horizontal, 20)
                     
                     
                     ScrollView {
                         VStack(alignment: .leading) {
                             ForEach(chunks(of: users, size: 3), id: \.self) { rowUsers in
-                                HStack(spacing: 1) {
+                                HStack(spacing: -5) {
                                     ForEach(rowUsers, id: \.id) { user in
                                         Button {
                                             viewModel.handleItemSelection(user)
@@ -73,7 +78,7 @@ struct SelectMembersView: View {
                                         }
                                     }
                                 }
-                                .padding(.top, 15)
+                                .padding(.top, 5)
                                 .padding(.bottom, 15)
                             }
                         }
@@ -83,10 +88,12 @@ struct SelectMembersView: View {
                     
                     
                 }
+                .animation(.easeInOut, value: viewModel.showSelectedUsers)
                 
             }
             .frame(maxWidth: .infinity)
             .searchable(text: $searchText,
+                        placement: .navigationBarDrawer(displayMode: .always),
                         prompt: "Search name or number")
             .onAppear {
                 // Customize the appearance of the search bar

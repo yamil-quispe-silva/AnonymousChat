@@ -49,32 +49,29 @@ struct ContactBubble<Content: View>: View {
                                 )
                                 .foregroundColor(.white)
                                 .shadow(color:.black ,radius: 1, x: 1, y: 1)
-                            
                         }
-                        
                     }
                 }
-                .padding(.bottom, -1)
+                .padding(.bottom, -8)
                 .overlay (alignment: .bottomTrailing) {
                     bottomCornerItems
                 }
                 
                 
-                
                 Text(name)
-                    .padding(.top, -3)
+                    .padding(.top, 10)
                     .font(Font.custom("Swiss721BT-BlackRounded", size: 14))
                     .foregroundColor(.white)
-                    .frame(width: 85, height: 35)
+                    .frame(width: 85, height: 20)
                     .lineLimit(1)
                     .truncationMode(.tail)
                     .clipped()
                     
             }
-            .padding(.bottom, 25)
-            
+//            .padding(.bottom, 25)
+            .frame(width: 100, height: 110)
         }
-        .frame(width: 100, height: 100)
+        
         .padding(.horizontal, 20)
         
     }
