@@ -12,6 +12,10 @@ enum ChatCreationRoute {
     case setUpGroupChat
 }
 
+enum chatConstants {
+    static let maxGroupParticipants = 360
+}
+
 
 final class NewGroupViewModel: ObservableObject {
     @Published var navStack = [ChatCreationRoute]()
@@ -19,6 +23,10 @@ final class NewGroupViewModel: ObservableObject {
     
     var showSelectedUsers: Bool {
         return !selectedChatMembers.isEmpty
+    }
+    
+    var disableNextButton: Bool {
+        return selectedChatMembers.isEmpty
     }
     
     func handleItemSelection(_ item: User) {

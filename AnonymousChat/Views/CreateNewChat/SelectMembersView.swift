@@ -26,31 +26,7 @@ struct SelectMembersView: View {
                 
                 Color.black.edgesIgnoringSafeArea(.all)
                 
-//                ScrollView {
-//                    VStack {
-//                        ForEach(Array(stride(from: 0, to: users.count, by: 3)), id: \.self) { index in
-//                            ContactRow(users: Array(users[index..<min(index + 3, users.count)]))
-                            
-//                            HStack {
-//                                ForEach(users, id: \.id) { user in
-//                                    ContactBubble(
-//                                        name: user.name,
-//                                        image: user.image,
-//                                        social: user.social
-//                                    )
-//                                    .padding()
-//                                    .padding(.horizontal, 3)
-//                                }
-//                            }
-//                            .frame(maxWidth: .infinity)
-//                            
-//                            
-//                        }
-//                    }
-//                }
-//                .frame(maxWidth: .infinity)
-//                .scrollIndicators(.hidden)
-                VStack {
+                VStack() {
                     
                     //selected users section
                     Section {
@@ -61,7 +37,6 @@ struct SelectMembersView: View {
                         }
                     }
                     .background(.clear)
-                    
                     .frame(height: 120)
                     .padding(.horizontal, 20)
                     
@@ -84,14 +59,15 @@ struct SelectMembersView: View {
                         }
                         .padding()
                     }
-                    
-                    
-                    
                 }
                 .animation(.easeInOut, value: viewModel.showSelectedUsers)
+            }
+            .navigationBarTitleDisplayMode(.inline)
+            .toolbar {
+                titleView()
+                trailingNavItem()
                 
             }
-            .frame(maxWidth: .infinity)
             .searchable(text: $searchText,
                         placement: .navigationBarDrawer(displayMode: .always),
                         prompt: "Search name or number")
@@ -100,7 +76,7 @@ struct SelectMembersView: View {
                 UISearchBar.appearance().barTintColor = UIColor.white
                 UITextField.appearance(whenContainedInInstancesOf: [UISearchBar.self]).backgroundColor = UIColor(white: 2.5, alpha: 0.3) // Adjust this for desired opacity
                 UITextField.appearance(whenContainedInInstancesOf: [UISearchBar.self]).textColor = .black // Text color for visibility
-
+                
                 // Customize the navigation bar title
                 let appearance = UINavigationBarAppearance()
                 appearance.configureWithTransparentBackground()
@@ -108,16 +84,14 @@ struct SelectMembersView: View {
                 appearance.titleTextAttributes = [.foregroundColor: UIColor.white]
                 UINavigationBar.appearance().standardAppearance = appearance
                 UINavigationBar.appearance().scrollEdgeAppearance = appearance
+                
             }
-            .navigationTitle("Select members")
+//            .navigationTitle("Select members")
+            
             .navigationDestination(for: ChatCreationRoute.self) { route in
                 
                 destinationView(for: route)
                 
-            }
-            .navigationBarTitleDisplayMode(.inline)
-            .toolbar {
-                trailingNavItem()
             }
             
             //fetch contacts call
@@ -137,13 +111,9 @@ struct SelectMembersView: View {
                         await fetchAllContacts()
                     }
                 }
-                
-                
-        }
-            
+            }
         }
     }
-    
     
     private func contactBubbleView(_ user: User) -> some View {
         ContactBubble(name: user.name, image: user.image, social: user.social) {
@@ -215,6 +185,7 @@ struct SelectMembersView: View {
     
 }
 
+//destination navigagation
 extension SelectMembersView {
     
     @ViewBuilder
@@ -223,33 +194,55 @@ extension SelectMembersView {
         case .addGroupChatMembers:
             Text("ADD GROUP CHAT PARTNER")
         case .setUpGroupChat:
-            NewChatView()
+            NewChatView(viewModel: viewModel)
         }
     }
 }
 
 
-
+//using toolbar items
 extension SelectMembersView {
     @ToolbarContentBuilder
     private func trailingNavItem() -> some ToolbarContent {
         ToolbarItem(placement: .topBarTrailing) {
-            cancelButton()
+            nextButton()
         }
     }
     
-    private func cancelButton() -> some View {
+    @ToolbarContentBuilder
+    private func titleView() -> some ToolbarContent {
+        ToolbarItem(placement: .principal) {
+            VStack(alignment: .center) {
+                Text("Select Members")
+                    .foregroundColor(.white)
+                    .fontWeight(.bold)
+                    .font(.system(size: 17))
+                let count = $viewModel.selectedChatMembers.count
+                let maxCount = chatConstants.maxGroupParticipants
+                
+                Text("\(count)/\(maxCount)")
+                    .foregroundStyle(.white.opacity(0.8))
+                    .font(.system(size: 12))
+            
+            }
+            .padding(.bottom, 2)
+        }
+    }
+    
+    private func nextButton() -> some View {
         Button {
-            dismiss()
+            viewModel.navStack.append(.setUpGroupChat)
+            
         } label: {
-            Image(systemName: "xmark")
+            Image(systemName: "arrowshape.right.fill")
                 .font(.footnote)
                 .bold()
-                .foregroundStyle(.white.opacity(0.8))
+                .foregroundColor(.black.opacity(0.8))
                 .padding(8)
-                .background(Color(.white.opacity(0.15)))
+                .background(viewModel.disableNextButton ? Color.gray.opacity(0.5) : Color.white.opacity(0.9))
                 .clipShape(Circle())
         }
+        .disabled(viewModel.disableNextButton)
     }
     
     private func chunks<T>(of array: [T], size: Int) -> [[T]] {
@@ -269,6 +262,7 @@ extension SelectMembersView {
     
     
 }
+
 
 #Preview {
     SelectMembersView(users: [

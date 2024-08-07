@@ -220,10 +220,10 @@
 			children = (
 				9C750E292C5D991400968B32 /* SelectMembersView.swift */,
 				9CE83AF42C44F2BF00B1CFCC /* NewChatView.swift */,
+				9C750E3B2C61932A00968B32 /* SectionSelectedContacts.swift */,
 				9C750E3A2C6192AA00968B32 /* Views */,
 				9C750E312C5ED67D00968B32 /* ViewModels */,
 				9CE83AF82C46430900B1CFCC /* Components */,
-				9C750E3B2C61932A00968B32 /* SectionSelectedContacts.swift */,
 			);
 			path = CreateNewChat;
 			sourceTree = "<group>";
