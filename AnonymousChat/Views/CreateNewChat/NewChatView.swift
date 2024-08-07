@@ -27,7 +27,7 @@ struct NewChatView: View {
     @State private var groupName: String = ""
     @State private var selectedDate: Date = Date()
     @State private var descriptionText: String = ""
-    
+    @StateObject private var viewModel = NewGroupViewModel()
     
     
     var body: some View {
