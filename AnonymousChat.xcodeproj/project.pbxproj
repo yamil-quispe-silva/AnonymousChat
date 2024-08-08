@@ -13,6 +13,12 @@
 		9489FB5D2C4049DF002BDAF5 /* FirebaseStorage in Frameworks */ = {isa = PBXBuildFile; productRef = 9489FB5C2C4049DF002BDAF5 /* FirebaseStorage */; };
 		9489FB5F2C404C0D002BDAF5 /* SignInView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9489FB5E2C404C0D002BDAF5 /* SignInView.swift */; };
 		9489FB612C404FE9002BDAF5 /* CreateLogin.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9489FB602C404FE9002BDAF5 /* CreateLogin.swift */; };
+		9489FB632C584A08002BDAF5 /* ProfilePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9489FB622C584A08002BDAF5 /* ProfilePicker.swift */; };
+		9489FB652C584ADD002BDAF5 /* ImagePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9489FB642C584ADD002BDAF5 /* ImagePicker.swift */; };
+		9489FB672C585ABA002BDAF5 /* UserModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9489FB662C585ABA002BDAF5 /* UserModel.swift */; };
+		9489FB692C585B3A002BDAF5 /* UserViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9489FB682C585B3A002BDAF5 /* UserViewModel.swift */; };
+		9489FB6B2C5DA819002BDAF5 /* FirebaseFirestore in Frameworks */ = {isa = PBXBuildFile; productRef = 9489FB6A2C5DA819002BDAF5 /* FirebaseFirestore */; };
+		9489FB6D2C5EFD78002BDAF5 /* loggedInView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9489FB6C2C5EFD78002BDAF5 /* loggedInView.swift */; };
 		9C009FF32C4310600088832E /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 9C009FF22C4310600088832E /* GoogleService-Info.plist */; };
 		9C52DD342C31073F00A7FE15 /* VerifyPhoneView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C52DD332C31073E00A7FE15 /* VerifyPhoneView.swift */; };
 		9C52DD362C310DF200A7FE15 /* NameView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9C52DD352C310DF200A7FE15 /* NameView.swift */; };
@@ -41,6 +47,11 @@
 /* Begin PBXFileReference section */
 		9489FB5E2C404C0D002BDAF5 /* SignInView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInView.swift; sourceTree = "<group>"; };
 		9489FB602C404FE9002BDAF5 /* CreateLogin.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateLogin.swift; sourceTree = "<group>"; };
+		9489FB622C584A08002BDAF5 /* ProfilePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfilePicker.swift; sourceTree = "<group>"; };
+		9489FB642C584ADD002BDAF5 /* ImagePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePicker.swift; sourceTree = "<group>"; };
+		9489FB662C585ABA002BDAF5 /* UserModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserModel.swift; sourceTree = "<group>"; };
+		9489FB682C585B3A002BDAF5 /* UserViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserViewModel.swift; sourceTree = "<group>"; };
+		9489FB6C2C5EFD78002BDAF5 /* loggedInView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = loggedInView.swift; sourceTree = "<group>"; };
 		9C009FF22C4310600088832E /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		9C52DD332C31073E00A7FE15 /* VerifyPhoneView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VerifyPhoneView.swift; sourceTree = "<group>"; };
 		9C52DD352C310DF200A7FE15 /* NameView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NameView.swift; sourceTree = "<group>"; };
@@ -76,6 +87,7 @@
 				9489FB572C4044A8002BDAF5 /* FirebaseMessaging in Frameworks */,
 				9489FB5D2C4049DF002BDAF5 /* FirebaseStorage in Frameworks */,
 				9489FB5B2C4049DF002BDAF5 /* FirebaseAuth in Frameworks */,
+				9489FB6B2C5DA819002BDAF5 /* FirebaseFirestore in Frameworks */,
 				9489FB552C4044A8002BDAF5 /* FirebaseAnalytics in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -83,6 +95,34 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		94779C042C645F64008768D4 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				9C9F03452C30AF2D007B38E0 /* IntroPageView.swift */,
+				9C9F034A2C30C990007B38E0 /* FindSchoolView.swift */,
+				9C9F034C2C30D092007B38E0 /* PickSchoolView.swift */,
+				9CC3CF3F2C30FA42008697C3 /* NumberView.swift */,
+				9489FB6C2C5EFD78002BDAF5 /* loggedInView.swift */,
+				9489FB622C584A08002BDAF5 /* ProfilePicker.swift */,
+				9489FB5E2C404C0D002BDAF5 /* SignInView.swift */,
+				9C52DD352C310DF200A7FE15 /* NameView.swift */,
+				9C9F034E2C30D795007B38E0 /* ContactsView.swift */,
+				9C52DD332C31073E00A7FE15 /* VerifyPhoneView.swift */,
+				9489FB602C404FE9002BDAF5 /* CreateLogin.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		94779C052C645FC8008768D4 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				9489FB642C584ADD002BDAF5 /* ImagePicker.swift */,
+				9489FB662C585ABA002BDAF5 /* UserModel.swift */,
+				9489FB682C585B3A002BDAF5 /* UserViewModel.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
 		9C039F8B2C2BAEFF00E1567F /* Views */ = {
 			isa = PBXGroup;
 			children = (
@@ -134,15 +174,8 @@
 		9C9F03442C30AF0A007B38E0 /* Onboarding */ = {
 			isa = PBXGroup;
 			children = (
-				9C9F03452C30AF2D007B38E0 /* IntroPageView.swift */,
-				9C9F034A2C30C990007B38E0 /* FindSchoolView.swift */,
-				9C9F034C2C30D092007B38E0 /* PickSchoolView.swift */,
-				9CC3CF3F2C30FA42008697C3 /* NumberView.swift */,
-				9C52DD332C31073E00A7FE15 /* VerifyPhoneView.swift */,
-				9489FB5E2C404C0D002BDAF5 /* SignInView.swift */,
-				9C52DD352C310DF200A7FE15 /* NameView.swift */,
-				9C9F034E2C30D795007B38E0 /* ContactsView.swift */,
-				9489FB602C404FE9002BDAF5 /* CreateLogin.swift */,
+				94779C042C645F64008768D4 /* Views */,
+				94779C052C645FC8008768D4 /* Models */,
 			);
 			path = Onboarding;
 			sourceTree = "<group>";
@@ -241,6 +274,7 @@
 				9489FB562C4044A8002BDAF5 /* FirebaseMessaging */,
 				9489FB5A2C4049DF002BDAF5 /* FirebaseAuth */,
 				9489FB5C2C4049DF002BDAF5 /* FirebaseStorage */,
+				9489FB6A2C5DA819002BDAF5 /* FirebaseFirestore */,
 			);
 			productName = AnonymousChat;
 			productReference = 9CA107262C2B8FD300F52517 /* AnonymousChat.app */;
@@ -307,11 +341,15 @@
 				9CA1072C2C2B8FD300F52517 /* ContentView.swift in Sources */,
 				9CF089832C3DCD1700D90849 /* BlurView.swift in Sources */,
 				9C52DD362C310DF200A7FE15 /* NameView.swift in Sources */,
+				9489FB632C584A08002BDAF5 /* ProfilePicker.swift in Sources */,
 				9C52DD342C31073F00A7FE15 /* VerifyPhoneView.swift in Sources */,
 				9C8010652C3DF5C20035D23F /* BubbleTextView.swift in Sources */,
+				9489FB672C585ABA002BDAF5 /* UserModel.swift in Sources */,
+				9489FB692C585B3A002BDAF5 /* UserViewModel.swift in Sources */,
 				9CA1072A2C2B8FD300F52517 /* AnonymousChatApp.swift in Sources */,
 				9C9F034F2C30D795007B38E0 /* ContactsView.swift in Sources */,
 				9CECF4922C3B0C9600FCBCD1 /* TransparentBlurView.swift in Sources */,
+				9489FB6D2C5EFD78002BDAF5 /* loggedInView.swift in Sources */,
 				9CE53F0B2C39E78B00DC20B9 /* MessageListController.swift in Sources */,
 				9CFD26EF2C37906500C35B58 /* TextInputArea.swift in Sources */,
 				9C80106B2C3F65900035D23F /* BubbleImageView.swift in Sources */,
@@ -322,6 +360,7 @@
 				9C9F03462C30AF2D007B38E0 /* IntroPageView.swift in Sources */,
 				9CE53F0D2C39E7BE00DC20B9 /* MessageListView.swift in Sources */,
 				9CF6EA222C3A42CC0043B916 /* ChatRoomView.swift in Sources */,
+				9489FB652C584ADD002BDAF5 /* ImagePicker.swift in Sources */,
 				9C9F034B2C30C990007B38E0 /* FindSchoolView.swift in Sources */,
 				9CC3CF402C30FA42008697C3 /* NumberView.swift in Sources */,
 			);
@@ -457,7 +496,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"AnonymousChat/Preview Content\"";
-				DEVELOPMENT_TEAM = 89B9H2GF72;
+				DEVELOPMENT_TEAM = 6JXR4QA97N;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = AnonymousChat/Info.plist;
@@ -488,7 +527,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"AnonymousChat/Preview Content\"";
-				DEVELOPMENT_TEAM = 89B9H2GF72;
+				DEVELOPMENT_TEAM = 6JXR4QA97N;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = AnonymousChat/Info.plist;
@@ -565,6 +604,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 9489FB532C4044A8002BDAF5 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
 			productName = FirebaseStorage;
+		};
+		9489FB6A2C5DA819002BDAF5 /* FirebaseFirestore */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 9489FB532C4044A8002BDAF5 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseFirestore;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

@@ -9,6 +9,8 @@ import SwiftUI
 
 struct FindSchoolView: View {
     var body: some View {
+        @StateObject var userViewModel: UserViewModel = UserViewModel()
+
         ZStack {
             Color.black
                 .edgesIgnoringSafeArea(.all)
@@ -36,7 +38,7 @@ struct FindSchoolView: View {
                     .foregroundColor(Color(red: 0.72, green: 0.71, blue: 0.69))
                     .frame(width: 324, height: 71, alignment: .center)
                 
-                NavigationLink(destination: PickSchoolView()) {
+                NavigationLink(destination: PickSchoolView(userViewModel: userViewModel)) {
                     ZStack {
                         Rectangle()
                             .foregroundColor(.clear)

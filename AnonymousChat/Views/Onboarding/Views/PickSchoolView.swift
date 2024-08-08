@@ -18,6 +18,7 @@ struct School: Identifiable {
 struct PickSchoolView: View {
     @State private var searchText = ""
     @State private var selectedSchool: School?
+    var userViewModel: UserViewModel
     
     let schools = [
         School(name: "Springfield High School", location: "Springfield, IL"),
@@ -71,7 +72,7 @@ struct PickSchoolView: View {
                 List {
                     ForEach(schools.filter { searchText.isEmpty || $0.name.localizedCaseInsensitiveContains(searchText) }) { school in
                         ZStack {
-                            NavigationLink(destination: NumberView()) {
+                            NavigationLink(destination: NumberView(userViewModel: userViewModel)) {
                                 EmptyView()
                             }
                             .opacity(0)
@@ -117,6 +118,6 @@ struct PickSchoolView: View {
     }
 }
 
-#Preview {
-    PickSchoolView()
-}
+//#Preview {
+//    PickSchoolView()
+//}
