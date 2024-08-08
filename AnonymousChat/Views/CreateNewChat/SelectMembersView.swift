@@ -71,6 +71,8 @@ struct SelectMembersView: View {
             .searchable(text: $searchText,
                         placement: .navigationBarDrawer(displayMode: .always),
                         prompt: "Search name or number")
+            
+            
             .onAppear {
                 // Customize the appearance of the search bar
                 UISearchBar.appearance().barTintColor = UIColor.white
@@ -185,16 +187,14 @@ struct SelectMembersView: View {
     
 }
 
-//destination navigagation
+// Destination navigation
 extension SelectMembersView {
-    
     @ViewBuilder
     private func destinationView(for route: ChatCreationRoute) -> some View {
         switch route {
-        case .addGroupChatMembers:
-            Text("ADD GROUP CHAT PARTNER")
         case .setUpGroupChat:
             NewChatView(viewModel: viewModel)
+
         }
     }
 }
@@ -265,24 +265,27 @@ extension SelectMembersView {
 
 
 #Preview {
-    SelectMembersView(users: [
-        User(id: UUID(), name: "Alice", image: nil, social: "alice123"),
-        User(id: UUID(), name: "Bob", image: nil, social: "bob123"),
-        User(id: UUID(), name: "Charlie", image: nil, social: "charlie123"),
-        User(id: UUID(), name: "David", image: nil, social: "david123"),
-        User(id: UUID(), name: "Eve", image: nil, social: "eve123"),
-        User(id: UUID(), name: "Frank", image: nil, social: "frank123"),
-        User(id: UUID(), name: "Alice", image: nil, social: "alice123"),
-        User(id: UUID(), name: "Bob", image: nil, social: "bob123"),
-        User(id: UUID(), name: "Charlie", image: nil, social: "charlie123"),
-        User(id: UUID(), name: "David", image: nil, social: "david123"),
-        User(id: UUID(), name: "Eve", image: nil, social: "eve123"),
-        User(id: UUID(), name: "Frank", image: nil, social: "frank123"),
-        User(id: UUID(), name: "Alice", image: nil, social: "alice123"),
-        User(id: UUID(), name: "Bob", image: nil, social: "bob123"),
-        User(id: UUID(), name: "Charlie", image: nil, social: "charlie123"),
-        User(id: UUID(), name: "David", image: nil, social: "david123"),
-        User(id: UUID(), name: "Eve", image: nil, social: "eve123"),
-        User(id: UUID(), name: "Frank", image: nil, social: "frank123")
-    ])
+    NavigationStack {
+        SelectMembersView(users: [
+            User(id: UUID(), name: "Alice", image: nil, social: "alice123"),
+            User(id: UUID(), name: "Bob", image: nil, social: "bob123"),
+            User(id: UUID(), name: "Charlie", image: nil, social: "charlie123"),
+            User(id: UUID(), name: "David", image: nil, social: "david123"),
+            User(id: UUID(), name: "Eve", image: nil, social: "eve123"),
+            User(id: UUID(), name: "Frank", image: nil, social: "frank123"),
+            User(id: UUID(), name: "Alice", image: nil, social: "alice123"),
+            User(id: UUID(), name: "Bob", image: nil, social: "bob123"),
+            User(id: UUID(), name: "Charlie", image: nil, social: "charlie123"),
+            User(id: UUID(), name: "David", image: nil, social: "david123"),
+            User(id: UUID(), name: "Eve", image: nil, social: "eve123"),
+            User(id: UUID(), name: "Frank", image: nil, social: "frank123"),
+            User(id: UUID(), name: "Alice", image: nil, social: "alice123"),
+            User(id: UUID(), name: "Bob", image: nil, social: "bob123"),
+            User(id: UUID(), name: "Charlie", image: nil, social: "charlie123"),
+            User(id: UUID(), name: "David", image: nil, social: "david123"),
+            User(id: UUID(), name: "Eve", image: nil, social: "eve123"),
+            User(id: UUID(), name: "Frank", image: nil, social: "frank123")
+        ])
+    }
+    
 }

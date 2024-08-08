@@ -9,76 +9,64 @@
 import SwiftUI
 
 
-
-// two errors:
-// - navbar is white for a sec
-// - when you click on the texteditor the background moves
-
-//struct CustomShapeStyle: ShapeStyle {
-//    func _apply(to shape: inout _ShapeStyle_Shape) {
-//        shape.fill(Color.black.opacity(0.4))
-//    }
-//}
-//
-
-
 struct NewChatView: View {
     
     @State private var groupName: String = ""
     @State private var selectedDate: Date = Date()
     @State private var descriptionText: String = ""
-    @StateObject private var viewModel = NewGroupViewModel()
+    @ObservedObject var viewModel: NewGroupViewModel
     
     
     var body: some View {
-        NavigationStack {
-            ZStack {
-                ScrollView {
-                    VStack(alignment: .leading, spacing: 30) {
-                        GroupPhoto()
-                            .padding(.top, -25)
-                        GroupNameAndDateAndPeople()
-                        DescriptionField()
-                        ParticipantsSection()
-                        VisibilitySection()
-                        CitySection()
-                        ExitButton()
-                    }
-                    .padding(.horizontal)
-                    .foregroundColor(.white)
+        ZStack {
+            ScrollView {
+                VStack(alignment: .leading, spacing: 30) {
+                    GroupPhoto()
+                        .padding(.top, -25)
+                    GroupNameAndDateAndPeople()
+                    DescriptionField()
+                    ParticipantsSection()
+                    VisibilitySection()
+                    CitySection()
+                    ExitButton()
                 }
-                .toolbar {
-                    ToolbarItem(placement: .principal) {
-                        Text("New Chat")
-                            .fontWeight(.bold)
-                            .foregroundColor(.white)
-                            .font(.system(size: 17))
-                    }
-                }
-                .toolbarBackground(Color.black.opacity(0.85), for: .navigationBar)
+                .padding(.horizontal)
+                .foregroundColor(.white)
+                .padding(.top, 70)
             }
-            .background(
-                ZStack {
-                    Image("group_pic")
-                        .resizable()
-                        .scaledToFill()
-                        .edgesIgnoringSafeArea(.all)
-                    
-                    
-                    TransparentBlurView(removeAllFilters: true)
-                        .blur(radius: 30)
-                        .edgesIgnoringSafeArea(.all)
-                    
-                    
-                    
-//                    Rectangle()
-//                        .foregroundColor(Color.black.opacity(0.3))
-//                        .edgesIgnoringSafeArea(.all)
+            
+            .toolbar {
+                ToolbarItem(placement: .principal) {
+                    Text("New Group")
+                        .fontWeight(.bold)
+                        .foregroundColor(.white)
+                        .font(.system(size: 17))
                 }
-                
-                
-            )
+            }
+            .toolbarBackground(Color.black.opacity(0.85), for: .navigationBar)
         }
+        .background(
+            ZStack {
+                Image("group_pic")
+                    .resizable()
+                    .scaledToFill()
+                    .edgesIgnoringSafeArea(.all)
+                
+                
+                TransparentBlurView(removeAllFilters: true)
+                    .blur(radius: 30)
+                    .edgesIgnoringSafeArea(.all)
+                
+                
+                
+                //                    Rectangle()
+                //                        .foregroundColor(Color.black.opacity(0.3))
+                //                        .edgesIgnoringSafeArea(.all)
+            }
+            
+            
+        )
+        
     }
     
     
@@ -293,7 +281,7 @@ struct NewChatView: View {
         }
         .padding()
     }
-
+    
 }
 
 
@@ -312,5 +300,5 @@ let participants = [
 ]
 
 #Preview {
-    NewChatView()
+    NewChatView(viewModel: NewGroupViewModel())
 }

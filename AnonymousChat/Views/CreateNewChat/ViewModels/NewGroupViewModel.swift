@@ -8,7 +8,6 @@
 import Foundation
 
 enum ChatCreationRoute {
-    case addGroupChatMembers
     case setUpGroupChat
 }
 
