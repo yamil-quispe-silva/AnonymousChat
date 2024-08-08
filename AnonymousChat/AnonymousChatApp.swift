@@ -24,8 +24,9 @@ struct AnonymousChatApp: App {
     
     var body: some Scene {
         WindowGroup {
-//            ContentView()
-            ChatRoomView()
+            //ProfilePicker()
+            //SignInView()
+            IntroPageView()
         }
     }
 }
